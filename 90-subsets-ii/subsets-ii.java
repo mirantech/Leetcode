@@ -21,7 +21,7 @@ class Solution
     public List<List<Integer>> subsetsWithDup(int[] nums)
     {
         Arrays.sort(nums);
-         Set<List<Integer>> result= new HashSet<>(); 
+        Set<List<Integer>> result= new HashSet<>(); 
         List<Integer> list = new ArrayList<>();
         solve(nums,list,result,0); 
         return new ArrayList<>(result); 
