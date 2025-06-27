@@ -15,7 +15,7 @@ class Solution {
         String str=new String(arr);
         StringBuffer buff=new StringBuffer(str);
         buff.deleteCharAt(delete);
-        if((buff+"").equals(buff.reverse()+"")){
+        if (buff.toString().equals(buff.reverse().toString())){
             return true;
         }
         return false;
