@@ -1,23 +1,22 @@
 class Solution {
-    public boolean validPalindrome(String s) {
-        char ch[]=s.toCharArray();
-        int i=0;
-        int j=ch.length-1;
-        while(i<j){
-            if(ch[i]!=ch[j]){
-                return (palin(i,j,ch)||(palin(j,i,ch)));
-            }
-            i++;j--;
+public boolean validPalindrome(String s) {
+    int i = 0, j = s.length() - 1;
+    while (i < j) {
+        if (s.charAt(i) != s.charAt(j)) {
+            return isPalin(s, i + 1, j) || isPalin(s, i, j - 1);
         }
-        return true;
+        i++;
+        j--;
     }
-    public static boolean palin(int delete,int con,char[] arr){
-        String str=new String(arr);
-        StringBuffer buff=new StringBuffer(str);
-        buff.deleteCharAt(delete);
-        if (buff.toString().equals(buff.reverse().toString())){
-            return true;
-        }
-        return false;
+    return true;
+}
+
+private boolean isPalin(String s, int i, int j) {
+    while (i < j) {
+        if (s.charAt(i) != s.charAt(j)) return false;
+        i++;
+        j--;
     }
+    return true;
+}
 }
