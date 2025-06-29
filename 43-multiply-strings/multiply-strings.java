@@ -33,11 +33,4 @@ public class Solution {
         return sb.toString();
     }
 
-    // Test it
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-        String num1 = "881095803";
-        String num2 = "61";
-        System.out.println(sol.multiply(num1, num2));  // Output: 53746843983 ✅
-    }
 }
